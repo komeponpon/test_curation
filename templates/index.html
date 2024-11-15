@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>再エネ関連ニュース</title>
+</head>
+<body>
+    <h1>再エネ関連ニュース</h1>
+    <ul>
+        {% for article in articles %}
+        <li>
+            {% if article[2] %}
+                <img src="{{ article[2] }}" alt="thumbnail" width="100">
+            {% endif %}
+            <a href="{{ article[1] }}" target="_blank">{{ article[0] }}</a>
+            <p>提供元: {{ article[3] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
